@@ -1,15 +1,16 @@
 import 'package:intl/intl.dart';
 
-mixin DateTimeMixin{
+mixin DateTimeMixin<T>{
 
-    static  dateTimeFromString(String dateString) {
-       return  DateTime.parse(dateString).toLocal();
 
-    }
    stringFromDateTime(DateTime dateTime){
     return  DateFormat("yyyy-MM-ddTHH:mm:ss'Z'").format(dateTime.toUtc());
 
   }
-// value.toUtc().toIso8601String();
+
+   String formattedDate(DateTime dateTime) {
+     DateFormat formatter = DateFormat('d-MMM, yyyy');
+     return formatter.format(dateTime);
+   }
 
 }
