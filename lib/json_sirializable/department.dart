@@ -7,12 +7,14 @@ part 'department.g.dart';
 class DepartmentJS {
 
   final String deptId;
+  @JsonKey(name: "kasjld")
+  @JsonKey()
   final String name;
   final String manager;
   final double budget;
   final Availability? availability;
   // @JsonKey(meetingTime : "meeting_time")
-  // @JsonKey(meetingTime : "meetingTime")
+  @JsonKey(meetingTime : "meetingTime")
   final DateTime meetingTime;
   final DateTime? year;
 
