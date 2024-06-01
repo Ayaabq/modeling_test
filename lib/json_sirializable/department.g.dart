@@ -11,7 +11,7 @@ DepartmentJS _$DepartmentJSFromJson(Map<String, dynamic> json) => DepartmentJS(
       name: json['name'] as String,
       manager: json['manager'] as String,
       budget: (json['budget'] as num).toDouble(),
-      meetingTime: DateTime.parse(json['meetingTime'] as String),
+      meetingTime: DateTime.parse(json['meeting_time'] as String),
       availability: json['availability'] == null
           ? null
           : Availability.fromJson(json['availability'] as Map<String, dynamic>),
@@ -26,6 +26,6 @@ Map<String, dynamic> _$DepartmentJSToJson(DepartmentJS instance) =>
       'manager': instance.manager,
       'budget': instance.budget,
       'availability': instance.availability,
-      'meetingTime': instance.meetingTime.toIso8601String(),
+      'meeting_time': instance.meetingTime.toIso8601String(),
       'year': instance.year?.toIso8601String(),
     };
